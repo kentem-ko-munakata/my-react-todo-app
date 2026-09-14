@@ -1,32 +1,18 @@
-# React + TypeScript + Vite
+# TODO管理アプリ
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+HTML・CSS・JavaScriptの基礎を学ぶために作成する、フロントエンド研修用のTODO管理アプリです。
 
-Currently, two official plugins are available:
+## 主な機能
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- TODOの追加
+- TODOの完了状態の切り替え
+- TODOの削除
+- TODOの一括削除
 
-## React Compiler
+## 参考教材
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+[ReactでTodo管理アプリを作ろう（ドットインストール）](https://dotinstall.com/lessons/todo_reactjs_v2)
 
-## Expanding the Oxlint configuration
+## 完成イメージ
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+![TODO管理アプリの完成イメージ](./react-todo-app_完成イメージ.png)
