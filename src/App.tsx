@@ -3,6 +3,7 @@ import './App.css';
 import { TodoForm } from './components/TodoForm/TodoForm';
 import { TodoList } from './components/TodoList/TodoList';
 import type { Todo } from '@/types/Todo';
+import { TodoHeader } from './components/TodoHeader/TodoHeader';
 
 function App() {
   const initTodos: Todo[] = [
@@ -35,11 +36,30 @@ function App() {
     setTodos((currentTodos) => currentTodos.filter((todo) => todo.id !== todoId));
   };
 
+  const onPurge = () => {
+    const completedTodos = todos.filter((todo) => todo.isCompleted);
+
+    if (completedTodos.length === 0) {
+      return;
+    }
+
+    const todoListText = completedTodos.map((todo) => `ID : ${todo.id} , タイトル : ${todo.title}`).join('\n');
+
+    const confirmCompletedTodos = confirm(`以下の完了済みタスクを削除します。\n\n${todoListText}`);
+
+    if (!confirmCompletedTodos) {
+      return;
+    }
+
+    setTodos((currentTodos) => currentTodos.filter((todo) => !todo.isCompleted));
+  };
+
   return (
-    <>
+    <div className='app'>
+      <TodoHeader onPurge={onPurge} />
       <TodoList todos={todos} onToggle={onToggle} onDelete={onDelete} />
       <TodoForm onAdd={onAdd} />
-    </>
+    </div>
   );
 }
 
