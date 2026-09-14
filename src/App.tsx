@@ -12,9 +12,17 @@ function App() {
     { id: '5', title: 'タスク5', isCompleted: false },
   ];
 
+  const onToggle = (todoId: string) => {
+    console.log('onToggle呼び出し');
+  };
+
+  const onDelete = (todoId: string) => {
+    console.log('onDelete呼び出し');
+  };
+
   return (
     <>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onToggle={onToggle} onDelete={onDelete} />
       <TodoForm />
     </>
   );
