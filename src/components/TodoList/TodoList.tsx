@@ -25,7 +25,7 @@ export function TodoList({ todos, onToggle, onDelete }: TodoListProps) {
       {todos.map((todo) => {
         return (
           <li className='todo-list-item' key={todo.id}>
-            <label className='todo-list-item-label'>
+            <label className={todo.isCompleted ? 'todo-list-item-label-completed' : 'todo-list-item-label'}>
               <input
                 className='todo-list-item-checkbox'
                 type='checkbox'
