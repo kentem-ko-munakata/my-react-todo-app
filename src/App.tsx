@@ -30,7 +30,7 @@ function App() {
   };
 
   const onDelete = (todoId: string) => {
-    console.log('onDelete呼び出し');
+    setTodos((currentTodo) => currentTodo.filter((todo) => todo.id !== todoId));
   };
 
   return (

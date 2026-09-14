@@ -12,11 +12,11 @@ export function TodoList({ todos, onToggle, onDelete }: TodoListProps) {
     onToggle(todoId);
   };
 
-  const handleDeleteButtonClick = (todoId: string) => {
-    const confirmDeleteTodo = confirm(`ID:${todoId}のタスクを削除します。`);
+  const handleDeleteButtonClick = (todo: Todo) => {
+    const confirmDeleteTodo = confirm(`ID:${todo.id}\nタイトル:${todo.title}\nを削除します。`);
 
     if (confirmDeleteTodo) {
-      onDelete(todoId);
+      onDelete(todo.id);
     }
   };
 
@@ -36,7 +36,7 @@ export function TodoList({ todos, onToggle, onDelete }: TodoListProps) {
               />
               <span className='todo-list-item-title'>{todo.title}</span>
             </label>
-            <button className='todo-list-item-delete-button' onClick={() => handleDeleteButtonClick(todo.id)}>
+            <button className='todo-list-item-delete-button' onClick={() => handleDeleteButtonClick(todo)}>
               Del
             </button>
           </li>
