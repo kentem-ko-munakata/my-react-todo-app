@@ -26,11 +26,13 @@ function App() {
   };
 
   const onToggle = (todoId: string) => {
-    console.log('onToggle呼び出し');
+    setTodos((currentTodos) =>
+      currentTodos.map((todo) => (todo.id === todoId ? { ...todo, isCompleted: !todo.isCompleted } : todo)),
+    );
   };
 
   const onDelete = (todoId: string) => {
-    setTodos((currentTodo) => currentTodo.filter((todo) => todo.id !== todoId));
+    setTodos((currentTodos) => currentTodos.filter((todo) => todo.id !== todoId));
   };
 
   return (

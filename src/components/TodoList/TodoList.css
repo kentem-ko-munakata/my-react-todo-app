@@ -14,6 +14,15 @@
   flex: 1 1 auto;
   overflow-wrap: anywhere; /* 改行 */
 }
+
+/* チェック時のCSS */
+.todo-list-item-label-completed {
+  flex: 1 1 auto;
+  overflow-wrap: anywhere;
+  color: #999;
+  text-decoration: line-through;
+}
+
 .todo-list-item-delete-button {
   flex: 0 0 auto;
 }
