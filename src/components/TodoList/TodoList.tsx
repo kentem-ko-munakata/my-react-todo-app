@@ -25,17 +25,20 @@ export function TodoList({ todos, onToggle, onDelete }: TodoListProps) {
       {todos.map((todo) => {
         return (
           <li className='todo-list-item' key={todo.id}>
-            <label>
+            <label className='todo-list-item-label'>
               <input
+                className='todo-list-item-checkbox'
                 type='checkbox'
                 checked={todo.isCompleted}
                 onChange={() => {
                   handleToggle(todo.id);
                 }}
               />
-              <span>{todo.title}</span>
+              <span className='todo-list-item-title'>{todo.title}</span>
             </label>
-            <button onClick={() => handleDeleteButtonClick(todo.id)}>Del</button>
+            <button className='todo-list-item-delete-button' onClick={() => handleDeleteButtonClick(todo.id)}>
+              Del
+            </button>
           </li>
         );
       })}

@@ -23,10 +23,10 @@ export function TodoForm() {
 
   return (
     <form onSubmit={handleSubmit} className='todo-form'>
-      <label htmlFor='todo-title'></label>
       <input
         id='todo-title'
         name='title'
+        aria-label='新規TODO'
         type='text'
         className='todo-form-input'
         onChange={handleTitleChange}
