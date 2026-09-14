@@ -1,7 +1,11 @@
 import { useState, type ChangeEvent } from 'react';
 import './TodoForm.css';
 
-export function TodoForm() {
+interface TodoFormProps {
+  onAdd: (title: string) => void;
+}
+
+export function TodoForm({ onAdd }: TodoFormProps) {
   const [title, setTitle] = useState<string>('');
 
   function handleTitleChange(event: ChangeEvent<HTMLInputElement>) {
@@ -17,7 +21,7 @@ export function TodoForm() {
       return;
     }
 
-    // 追加用の関数呼び出し
+    onAdd(title);
     setTitle('');
   };
 
