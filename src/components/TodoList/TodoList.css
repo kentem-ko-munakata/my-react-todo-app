@@ -1,0 +1,28 @@
+.todo-list {
+  padding: 0px;
+  list-style: none;
+}
+
+.todo-list-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.todo-list-item-label {
+  flex: 1 1 auto;
+  overflow-wrap: anywhere; /* 改行 */
+}
+
+/* チェック時のCSS */
+.todo-list-item-label-completed {
+  flex: 1 1 auto;
+  overflow-wrap: anywhere;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.todo-list-item-delete-button {
+  flex: 0 0 auto;
+}
